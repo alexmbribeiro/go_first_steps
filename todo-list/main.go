@@ -81,7 +81,7 @@ func listTasks(showAll bool) {
     todos, _ := loadTodos()
 
     w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
-    fmt.Fprintln(w, "Nº\tTarefa\tCriada há\tDone")
+    fmt.Fprintln(w, "ID\tTask\tCreated at\tDone")
     fmt.Fprintln(w, "----\t------\t---------------------------\t---------------")
 
     for i, t := range todos {
