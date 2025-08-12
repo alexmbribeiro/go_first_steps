@@ -1,0 +1,18 @@
+meta {
+  name: Subtract two numbers
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/subtract
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "number1": "",
+    "number2": ""
+  }
+}
