@@ -21,8 +21,8 @@ func Divide(req DivideRequest) (ResultResponse, error) {
 	return ResultResponse{Result: req.Dividend / req.Divisor}, nil
 }
 
-func Sum(numbers []int) ResultResponse {
-	sum := 0
+func Sum(numbers []float32) ResultResponse {
+	var sum float32 = 0
 	for _, n := range numbers {
 		sum += n
 	}

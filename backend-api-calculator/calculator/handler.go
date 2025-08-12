@@ -58,7 +58,7 @@ func DivideHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func SumHandler(w http.ResponseWriter, r *http.Request) {
-	var numbers []int
+	var numbers []float32
 	if err := utils.ParseJSON(r, &numbers); err != nil {
 		slog.Error("Invalid JSON", "error", err)
 		utils.WriteJSON(w, http.StatusBadRequest, map[string]string{"error": "invalid JSON"})

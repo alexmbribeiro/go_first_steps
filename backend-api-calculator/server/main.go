@@ -19,7 +19,7 @@ func main() {
 	mux.HandleFunc("/divide", calculator.DivideHandler)
 	mux.HandleFunc("/sum", calculator.SumHandler)
 
-	handler := cors.Default().Handler(middleware.AuthMiddleware(mux))
+	handler := cors.Default().Handler(middleware.AuthMiddleware(middleware.RequestIDMiddleware(mux)))
 
 	slog.Info("Starting server on :3000")
 	if err := http.ListenAndServe(":3000", handler); err != nil {
